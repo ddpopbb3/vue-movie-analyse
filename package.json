@@ -14,7 +14,7 @@
     "test:ci": "npm run lint && npm run test:unit",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "new": "plop",
-    "start": "npm run dev --port=80"
+    "start": "npm run dev"
   },
   "husky": {
     "hooks": {
