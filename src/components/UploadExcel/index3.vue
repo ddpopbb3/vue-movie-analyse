@@ -85,7 +85,7 @@ export default {
       })
       API({
         method: 'get',
-        url: './data.xlsx',
+        url: 'data.xlsx',
         responseType: 'blob',
         type: 'xlsx'
       }).then(response => {
