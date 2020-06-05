@@ -10,6 +10,7 @@
         :unique-opened="false"
         :active-text-color="variables.menuActiveText"
         :collapse-transition="false"
+        :default-openeds="openMenu"
         mode="vertical"
       >
         <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
@@ -27,6 +28,11 @@ import variables from '@/styles/variables.scss'
 export default {
   components: { SidebarItem, Logo },
   computed: {
+    openMenu() {
+      const arr = []
+      this.permission_routes.map(item => { if (!item.hidden && item.path) arr.push(item.path) })
+      return arr
+    },
     ...mapGetters([
       'permission_routes',
       'sidebar'
